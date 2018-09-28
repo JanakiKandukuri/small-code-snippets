@@ -1,0 +1,26 @@
+# small-code-snippets
+
+
+/** *************************** TO FIND DUPLICATES AND THEIR COUNT IN JAVASCRIPT *******************************/
+var arr = ['Cust','customer','customer','Customer','Cust','customer',
+'customer','Customer','Customers','Customers','Customers','Customers',
+'customers','customers','customers','customers','customer','customer',
+'customer','customer','Customer','Customer','customers','customers']; // some array with duplicates
+
+var list = []; // array to hold unique values from above array
+var arrObj = {}; // object with key - name of word from arry, value - count of those words
+
+for (var i = 0; i < arr.length; i++) {
+	if(list.length > 0) {
+    	if(list.includes(arr[i])) {
+        	var count  = arr.filter(a => a === arr[i]);
+           arrObj[arr[i]] = count;
+        } else {
+        	list.push(arr[i]);
+        }
+    } else {
+    	list.push(arr[i]);
+    }
+   
+}
+ console.log(arrObj)
